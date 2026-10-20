@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockIA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="usuario">
+            <span class="icone-usuario">👤</span>
+            <span>Usuário</span>
+        </div>
+
+        <h1>StockIA</h1>
+
+        <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+    <main>
+        <section class="inicio" id="inicio">
+
+            <h2>Olá!</h2>
+
+            <p class="subtitulo">
+                Gerencie seu estoque de forma simples e inteligente.
+            </p>
+
+            <div class="resumo-estoque">
+                <div class="card-resumo">
+                    <span class="icone">📦</span>
+                    <h3>Produtos</h3>
+                    <strong class="total-produtos" id="total-produtos">0</strong>
+                </div>
+
+                <div class="card-resumo">
+                    <span class="icone">⚠️</span>
+                    <h3>Estoque baixo</h3>
+                    <strong class="estoque-baixo" id="estoque-baixo">0</strong>
+                </div>
+
+                <div class="card-resumo">
+                    <span class="icone">💰</span>
+                    <h3>Preço do estoque</h3>
+                    <strong class="valor-estoque" id="valor-estoque">R$ 0,00</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="estoque" id="tela-estoque">
+            <div class="titulo-secao">
+                <div>
+                    <h2>Estoque</h2>
+                    <p>Confira os produtos cadastrados.</p>
+                </div>
+
+                <button class="btn-add" id="btn-add">
+                    + Adicionar produto
+                </button>
+            </div>
+
+            <div class="listar-produtos" id="listar-produtos">
+
+            </div>
+
+            <div class="formulario-container" id="formulario-container" style="display: none;">
+                <h3>Cadastrar produto</h3>
+
+                <form id="form-produto">
+
+                    <label for="nome">Nome do produto</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="categoria">Categoria</label>
+                    <input type="text" id="categoria" name="categoria" required>
+
+                    <label for="quantidade">Quantidade inicial</label>
+                    <input type="number" id="quantidade" name="quantidade" min="0" required>
+
+                    <label for="estoqueMinimo">Estoque minimo</label>
+                    <input type="number" id="estoqueMinimo" name="estoqueMinimo" min="0" required>
+
+                    <label for="preco">Preço unitário</label>
+                    <input type="number" id="preco" name="preco" min="0" step="0.01" required>
+
+                    <label for="fornecedorId">Fornecedor</label>
+                    <select id="fornecedorId" name="fornecedorId">
+                        <option value="">Sem fornecedor</option>
+                    </select>
+
+                    <div class="btn-formulario">
+                        <button type="submit" class="btn-add">
+                            Cadastrar produto
+                        </button>
+
+                        <button type="button" id="btn-cancelar" class="btn-cancelar">
+                            Cancelar
+                        </button>
+                    </div>
+
+                    <p id="mensagem-formulario" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <nav class="menu-inferior">
+
+        <button class="aba" id="aba-ia">
+            <span>🤖</span>
+            <span>IA</span>
+        </button>
+
+        <button class="aba" id="aba-estoque">
+            <span>📦</span>
+            <span>Estoque</span>
+        </button>
+    </nav>
+
+    <script src="js/estoque.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
